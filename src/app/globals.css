@@ -1,26 +1,127 @@
 @import "tailwindcss";
+@config "../../tailwind.config.ts";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #07080f;
+  --foreground: #f3f4f6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-neon-cyan: #00ffff;
+  --color-neon-pink: #ff007f;
+  --color-neon-magenta: #ff00ff;
+  --color-neon-purple: #9d4edd;
+  --color-neon-green: #00ff88;
+  --color-neon-lime: #00ff00;
+  --color-neon-yellow: #ffee00;
+  --color-neon-blue: #00b4d8;
+  --color-neon-orange: #ff7700;
+  --color-dark-bg: #07080f;
+  --color-dark-surface: #0f111e;
+  --color-dark-card: #141728;
+  --color-dark-border: #1f243d;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #07080f;
+  color: #f3f4f6;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Neon Glow Utilities */
+.neon-glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.45), 0 0 40px rgba(0, 255, 255, 0.15);
+}
+
+.neon-glow-pink {
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.45), 0 0 40px rgba(255, 0, 127, 0.15);
+}
+
+.neon-glow-magenta {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.45), 0 0 40px rgba(255, 0, 255, 0.15);
+}
+
+.neon-glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.45), 0 0 40px rgba(0, 255, 136, 0.15);
+}
+
+.neon-glow-lime {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.45), 0 0 40px rgba(0, 255, 0, 0.15);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 20px rgba(157, 78, 221, 0.45), 0 0 40px rgba(157, 78, 221, 0.15);
+}
+
+.neon-border-cyan {
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.35);
+}
+
+.neon-border-pink {
+  border-color: #ff007f;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.35);
+}
+
+.neon-border-magenta {
+  border-color: #ff00ff;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.35);
+}
+
+.neon-border-green {
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.35);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.8), 0 0 25px rgba(255, 0, 127, 0.4);
+}
+
+.neon-text-magenta {
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.4);
+}
+
+.neon-text-green {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8), 0 0 25px rgba(0, 255, 136, 0.4);
+}
+
+.neon-text-lime {
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 25px rgba(0, 255, 0, 0.4);
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 10px rgba(157, 78, 221, 0.8), 0 0 25px rgba(157, 78, 221, 0.4);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07080f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2338;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Background Grid Pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
